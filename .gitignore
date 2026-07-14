@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Backend
+backend/.venv/
+backend/*.egg-info/
+uploads/
+
+
+
+*.log
+
+# Scratch files
+rag_test_python_backend.txt
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+build/
+*.local
+
+# Environment
+.env
+.env.*
+!.env.example
+!frontend/.env.local.example
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

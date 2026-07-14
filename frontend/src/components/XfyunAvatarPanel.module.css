@@ -1,0 +1,84 @@
+.embedded {
+  min-width: 0;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: clamp(220px, 25vh, 300px);
+  min-height: 0;
+  max-height: 300px;
+  overflow: hidden;
+  border: 1px solid #dbe6f3;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent),
+    #f8fbff;
+}
+
+.placeholder {
+  display: grid;
+  max-width: 420px;
+  place-items: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.placeholder :global(.anticon) {
+  color: #285b8f;
+  font-size: 36px;
+}
+
+.toolbar {
+  display: grid;
+  gap: 8px;
+}
+
+.toolbarRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.toolbarRow :global(.ant-btn) {
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toolbarRow :global(.ant-btn > span) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hint {
+  margin: 0;
+  color: #6b7280;
+}
+
+.embedded .hint {
+  display: none;
+}
+
+.embedded :global(.ant-alert) {
+  padding: 8px 10px;
+}
+
+@media (max-width: 760px) {
+  .stage {
+    height: auto;
+    min-height: 220px;
+    max-height: none;
+  }
+
+  .toolbarRow {
+    grid-template-columns: 1fr;
+  }
+}

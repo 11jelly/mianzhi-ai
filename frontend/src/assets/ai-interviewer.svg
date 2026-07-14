@@ -1,0 +1,14 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI interviewer avatar">
+  <rect width="220" height="220" rx="110" fill="#EFF6FF"/>
+  <circle cx="110" cy="92" r="50" fill="#DBEAFE" stroke="#2563EB" stroke-width="4"/>
+  <path d="M70 178c8-34 28-52 40-52s32 18 40 52" fill="#BFDBFE"/>
+  <path d="M70 178c8-34 28-52 40-52s32 18 40 52" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+  <rect x="78" y="72" width="64" height="44" rx="18" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="4"/>
+  <circle cx="96" cy="94" r="5" fill="#2563EB"/>
+  <circle cx="124" cy="94" r="5" fill="#2563EB"/>
+  <path d="M99 107c6 5 16 5 22 0" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+  <path d="M62 92h16M142 92h16" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M110 40v-14" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="110" cy="22" r="7" fill="#60A5FA"/>
+  <path d="M55 150c-12-8-20-20-23-34M165 150c12-8 20-20 23-34" stroke="#93C5FD" stroke-width="5" stroke-linecap="round"/>
+</svg>

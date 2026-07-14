@@ -1,0 +1,301 @@
+.panel {
+  display: grid;
+  grid-template-columns: minmax(118px, 150px) minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(24, 59, 98, 0.12);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  padding: 14px;
+}
+
+.avatarWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 148px;
+}
+
+.avatar {
+  position: relative;
+  z-index: 1;
+  width: min(148px, 100%);
+  height: auto;
+  animation: float 4.8s ease-in-out infinite;
+}
+
+.ring {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border: 2px solid rgba(24, 59, 98, 0.22);
+  border-radius: 999px;
+}
+
+.speaking {
+  background: linear-gradient(180deg, #eef6ff 0%, #ffffff 100%);
+  border-color: rgba(40, 91, 143, 0.24);
+}
+
+.listening {
+  background: linear-gradient(180deg, #f0fbf6 0%, #ffffff 100%);
+  border-color: rgba(25, 164, 99, 0.24);
+}
+
+.thinking {
+  background: linear-gradient(180deg, #fff8e6 0%, #ffffff 100%);
+  border-color: rgba(243, 179, 39, 0.34);
+}
+
+.completed {
+  background: linear-gradient(180deg, #edf9f3 0%, #ffffff 100%);
+  border-color: rgba(22, 163, 74, 0.28);
+}
+
+.speaking .ring,
+.listening .ring {
+  animation: pulse 1.8s ease-out infinite;
+}
+
+.listening .ring {
+  border-color: rgba(25, 164, 99, 0.28);
+}
+
+.thinking .ring {
+  border-color: rgba(243, 179, 39, 0.25);
+  border-top-color: #d88612;
+  animation: spin 1.6s linear infinite;
+}
+
+.completed .ring {
+  border-color: rgba(22, 163, 74, 0.36);
+}
+
+.content {
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+  word-break: keep-all;
+}
+
+.status {
+  margin: 0;
+  color: #4b5563;
+  font-weight: 600;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.description {
+  margin: 8px 0 0;
+  color: #667085;
+  line-height: 1.5;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.visualizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 32px;
+  margin-top: 18px;
+}
+
+.bar {
+  width: 7px;
+  height: 12px;
+  border-radius: 999px;
+  background: #285b8f;
+  opacity: 0.72;
+}
+
+.listening .bar {
+  background: #19a463;
+}
+
+.thinking .bar {
+  background: #d88612;
+}
+
+.completed .bar {
+  background: #16a34a;
+  height: 18px;
+  opacity: 0.9;
+}
+
+.speaking .bar,
+.listening .bar {
+  animation: wave 1s ease-in-out infinite;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.bar:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #d88612;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+.fallback {
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+.compact {
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 12px;
+}
+
+.compact .avatarWrap {
+  min-height: 110px;
+}
+
+.compact .avatar {
+  width: min(108px, 100%);
+}
+
+.compact .ring {
+  width: 96px;
+  height: 96px;
+}
+
+.compact .title {
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.compact .status {
+  font-size: 15px;
+}
+
+.compact .description {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.compact .visualizer {
+  height: 20px;
+  margin-top: 8px;
+}
+
+.compact .bar {
+  width: 6px;
+}
+
+.compact .fallback {
+  display: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.72;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 10px;
+  }
+  50% {
+    height: 28px;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .panel {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .panel.compact {
+    grid-template-columns: 96px minmax(0, 1fr);
+    text-align: left;
+  }
+
+  .compact .avatarWrap {
+    min-height: 96px;
+  }
+
+  .visualizer {
+    justify-content: center;
+  }
+
+  .compact .visualizer {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar,
+  .ring,
+  .bar,
+  .dot {
+    animation: none !important;
+  }
+}
