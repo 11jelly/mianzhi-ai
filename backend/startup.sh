@@ -1,7 +1,7 @@
 #!/bin/bash
 # =============================================
 # 面智AI — Railway 部署启动脚本
-# 1. 转换 Railway MySQL DATABASE_URL（mysql:// → mysql+asyncmy://）
+# 1. 转换 Railway DATABASE_URL（mysql:// → mysql+asyncmy://, postgresql:// → postgresql+asyncpg://）
 # 2. 运行数据库迁移
 # 3. 启动 FastAPI 服务
 # =============================================
@@ -10,8 +10,8 @@ set -e
 echo "=== 面智AI 后端启动 ==="
 
 # ── 1. 数据库连接字转换 ──────────────────────────
-# Railway MySQL 插件提供的 DATABASE_URL 是 mysql:// 格式
-# 本项目需要 mysql+asyncmy:// 格式（异步驱动）
+# Railway 提供的 DATABASE_URL 可能是 mysql:// 或 postgresql:// 格式
+# 本项目需要异步驱动格式（mysql+asyncmy:// 或 postgresql+asyncpg://）
 if [ -n "$DATABASE_URL" ]; then
     case "$DATABASE_URL" in
         mysql://*)
@@ -20,6 +20,13 @@ if [ -n "$DATABASE_URL" ]; then
             ;;
         mysql+asyncmy://*)
             echo "[OK] DATABASE_URL 已是 asyncmy 格式"
+            ;;
+        postgresql://*)
+            export DATABASE_URL="postgresql+asyncpg://${DATABASE_URL#postgresql://}"
+            echo "[OK] DATABASE_URL 已转换为 asyncpg 格式"
+            ;;
+        postgresql+asyncpg://*)
+            echo "[OK] DATABASE_URL 已是 asyncpg 格式"
             ;;
         *)
             echo "[OK] DATABASE_URL 使用原始格式"
