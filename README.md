@@ -1,8 +1,6 @@
 # 面智AI — AI产品经理智能面试训练平台
 
-[
-
-![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/)
 [![Node](https://img.shields.io/badge/node-20.19%2B-brightgreen)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/react-19-61dafb)](https://react.dev/)
